@@ -13,4 +13,6 @@ h.each { |key, value| puts "yeeah" if key == :z }
 b = {}
 h.each { |key, value| b[value] = key }
 
+#otra forma: h.invert
+
 puts b
