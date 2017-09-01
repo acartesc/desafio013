@@ -21,6 +21,17 @@ def update_element(hash)
   print hash
 end
 
+def greater_element(hash)
+	puts 'El ítem con mayor stock es'
+	print hash.max_by{ |key, value| value}
+end
+
+def search_element(hash)
+  puts 'Digite el nombre del ítem'
+  input = gets.chomp.to_sym
+  hash.each {|key, value| puts "Ítem: #{key}, Stock: #{value}" if key == input}
+end
+
 puts 'Bienvenido al Sistema de Inventario!, seleccione su opción:'
 
 option = 0
@@ -48,14 +59,19 @@ while option != 7
       update_element(inventario)
 
     when 4
-			print "#{inventario} \n"
+      print "#{inventario} \n"
+
     when 5
-			puts "eligio 5"
+      greater_element(inventario)
+    
     when 6
-			puts "eligio 6"
+      search_element(inventario)
+    
     when 7
       puts "Adios!"
+    
     else
       puts "Elija una opcion correcta"
+  
   end
 end
