@@ -1,8 +1,8 @@
-inventario = {Notebooks: 4, PC_Escritorio: 6, Routers: 10, Impresoras: 6}
+inventario = { Notebooks: 4, PC_Escritorio: 6, Routers: 10, Impresoras: 6 }
 
 def add_element(hash)
   puts 'Ingrese ítem, stock'
-  input = gets.chomp.split(',').map{|elem| elem.strip}
+  input = gets.chomp.split(',').map { |elem| elem.strip }
   hash[input[0].to_sym] = input[1].to_i
   print hash
 end
@@ -16,20 +16,20 @@ end
 
 def update_element(hash)
   puts 'Ingrese actualización ítem, stock'
-  input = gets.chomp.split(',').map{|elem| elem.strip}
+  input = gets.chomp.split(',').map { |elem| elem.strip }
   hash[input[0].to_sym] = input[1].to_i
   print hash
 end
 
 def greater_element(hash)
 	puts 'El ítem con mayor stock es'
-	print hash.max_by{ |key, value| value}
+	print hash.max_by { |key, value| value }
 end
 
 def search_element(hash)
   puts 'Digite el nombre del ítem'
   input = gets.chomp.to_sym
-  hash.each {|key, value| puts "Ítem: #{key}, Stock: #{value}" if key == input}
+  hash.each { |key, value| puts "Ítem: #{key}, Stock: #{value}" if key == input }
 end
 
 puts 'Bienvenido al Sistema de Inventario!, seleccione su opción:'
@@ -68,10 +68,10 @@ while option != 7
       search_element(inventario)
     
     when 7
-      puts "Adios!"
+      puts 'Adios!'
     
     else
-      puts "Elija una opcion correcta"
+      puts 'Elija una opcion correcta'
   
   end
 end
