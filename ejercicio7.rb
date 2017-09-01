@@ -14,6 +14,13 @@ def delete_element(hash)
   print hash
 end
 
+def update_element(hash)
+  puts 'Ingrese actualización ítem, stock'
+  input = gets.chomp.split(',').map{|elem| elem.strip}
+  hash[input[0].to_sym] = input[1].to_i
+  print hash
+end
+
 puts 'Bienvenido al Sistema de Inventario!, seleccione su opción:'
 
 option = 0
@@ -36,8 +43,10 @@ while option != 7
 
     when 2
       delete_element(inventario)
+    
     when 3
-			puts "eligio 3"
+      update_element(inventario)
+
     when 4
 			puts "eligio 4"
     when 5
