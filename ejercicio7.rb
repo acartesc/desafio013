@@ -48,7 +48,7 @@ while option != 7
       update_element(inventario)
 
     when 4
-			puts "eligio 4"
+			print "#{inventario} \n"
     when 5
 			puts "eligio 5"
     when 6
